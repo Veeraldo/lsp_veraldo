@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JadwalDokter extends Model
 {
-    protected $fillable = ['dokter_id', 'hari', 'jam_mulai', 'jam_selesai', 'status'];
+    protected $fillable = ['dokter_id', 'tanggal', 'jam_mulai', 'jam_selesai', 'status'];
 
     public function dokter()
     {

@@ -18,7 +18,7 @@ use App\Http\Controllers\Pasien\ReservasiController as PasienReservasi;
 use App\Http\Controllers\Pasien\PembayaranController as PasienPembayaran;
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return view('LandingPage');
 });
 
 // Authentication Routes

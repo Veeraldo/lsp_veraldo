@@ -25,10 +25,9 @@ class JadwalDokterController extends Controller
     {
         $request->validate([
             'dokter_id' => 'required|exists:dokters,id',
-            'hari' => 'required|string|max:255',
+            'tanggal' => 'required|date',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
-            'status' => 'required|in:tersedia,penuh,libur',
         ]);
 
         JadwalDokter::create($request->all());
@@ -46,10 +45,9 @@ class JadwalDokterController extends Controller
     {
         $request->validate([
             'dokter_id' => 'required|exists:dokters,id',
-            'hari' => 'required|string|max:255',
+            'tanggal' => 'required|date',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
-            'status' => 'required|in:tersedia,penuh,libur',
         ]);
 
         $jadwal->update($request->all());

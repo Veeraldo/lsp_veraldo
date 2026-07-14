@@ -16,9 +16,20 @@ class ReservasiController extends Controller
 
     public function verify(Request $request, $id)
     {
-        $request->validate(['status' => 'required|in:approved,rejected']);
+        $request->validate([
+            'status' => 'required|in:approved,rejected',
+            'harga' => 'required_if:status,approved|numeric|min:0'
+        ]);
+        
         $reservasi = Reservasi::findOrFail($id);
         $reservasi->status = $request->status;
+        
+        if ($request->status == 'approved') {
+            $reservasi->harga = $request->harga;
+        } else {
+            $reservasi->harga = null;
+        }
+        
         $reservasi->save();
         return redirect()->back()->with('success', 'Status reservasi diperbarui.');
     }

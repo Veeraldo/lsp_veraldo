@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pengumuman extends Model
 {
+    protected $table = 'pengumumans';
     protected $fillable = ['admin_id', 'judul', 'isi', 'media', 'tanggal_publikasi'];
 
     public function admin()

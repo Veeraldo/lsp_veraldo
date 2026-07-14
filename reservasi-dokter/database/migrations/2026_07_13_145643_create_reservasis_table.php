@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('dokter_id')->constrained('dokters')->onDelete('cascade');
             $table->foreignId('jadwal_dokter_id')->constrained('jadwal_dokters')->onDelete('cascade');
             $table->date('tanggal');
+            $table->integer('harga')->nullable();
             $table->enum('status', ['pending', 'approved', 'rejected', 'selesai'])->default('pending');
             $table->timestamps();
         });

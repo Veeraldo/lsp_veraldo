@@ -26,12 +26,6 @@ class AuthController extends Controller
             $user = Auth::user();
 
             if ($user->role === 'pasien') {
-                if ($user->status_akun !== 'approved') {
-                    Auth::logout();
-                    $request->session()->invalidate();
-                    $request->session()->regenerateToken();
-                    return back()->with('error', 'Akun Anda belum diverifikasi oleh Admin. Silakan tunggu.');
-                }
                 return redirect()->intended('/pasien/dashboard');
             }
 
@@ -55,7 +49,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         User::create([

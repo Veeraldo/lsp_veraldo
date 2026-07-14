@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservasi extends Model
 {
-    protected $fillable = ['user_id', 'dokter_id', 'jadwal_dokter_id', 'tanggal', 'status'];
+    protected $fillable = [
+        'user_id', 'dokter_id', 'jadwal_dokter_id', 'tanggal', 'status', 'harga'
+    ];
 
     public function user()
     {

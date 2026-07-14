@@ -21,24 +21,43 @@ class ReservasiController extends Controller
 
     public function create()
     {
-        $jadwals = JadwalDokter::with('dokter')->where('status', 'tersedia')->get();
-        return view('pasien.reservasi.create', compact('jadwals'));
+        $dokters = \App\Models\Dokter::with('jadwalDokters')->whereHas('jadwalDokters')->get();
+        
+        $availableSlots = [];
+
+        foreach ($dokters as $dokter) {
+            foreach ($dokter->jadwalDokters as $jadwal) {
+                $availableSlots[] = [
+                    'dokter_id' => $dokter->id,
+                    'jadwal_id' => $jadwal->id,
+                    'tanggal_display' => \Carbon\Carbon::parse($jadwal->tanggal)->format('l, d M Y'),
+                    'jam' => substr($jadwal->jam_mulai, 0, 5) . ' - ' . substr($jadwal->jam_selesai, 0, 5),
+                    'sisa_kuota' => 'Tersedia'
+                ];
+            }
+        }
+
+        return view('pasien.reservasi.create', compact('dokters', 'availableSlots'));
     }
 
     public function store(Request $request)
     {
+        if (\Illuminate\Support\Facades\Auth::user()->status_akun !== 'approved') {
+            return back()->with('error', 'Akun Anda belum disetujui. Anda tidak dapat membuat reservasi saat ini.');
+        }
+
         $request->validate([
             'jadwal_dokter_id' => 'required|exists:jadwal_dokters,id',
-            'tanggal' => 'required|date|after_or_equal:today',
         ]);
-
-        $jadwal = JadwalDokter::findOrFail($request->jadwal_dokter_id);
-
+        
+        $jadwalId = $request->jadwal_dokter_id;
+        $jadwal = \App\Models\JadwalDokter::findOrFail($jadwalId);
+        
         Reservasi::create([
-            'user_id' => Auth::id(),
+            'user_id' => \Illuminate\Support\Facades\Auth::id(),
             'dokter_id' => $jadwal->dokter_id,
             'jadwal_dokter_id' => $jadwal->id,
-            'tanggal' => $request->tanggal,
+            'tanggal' => $jadwal->tanggal,
             'status' => 'pending'
         ]);
 
