@@ -59,7 +59,7 @@
             <div class="col-lg-6 ps-lg-5">
                 <div class="position-relative">
                     <div class="ratio ratio-16x9 shadow-lg rounded-5 overflow-hidden position-relative" style="z-index: 2; border: 8px solid white;">
-                        <iframe src="https://www.youtube.com/embed/v967txm1SxU?si=sTG40lRL4LvU7Lft&autoplay=1&mute=1"></iframe>
+                        <iframe src="https://www.youtube.com/embed/qgDvIye_qBM?si=-V9kf975qiXWhLZG&autoplay=1&mute=1"></iframe>
                     </div>
                 </div>
             </div>
