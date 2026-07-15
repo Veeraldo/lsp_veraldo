@@ -38,8 +38,8 @@
             <div class="card-body p-4">
                 <div class="alert alert-info border-info border rounded-3 mb-4">
                     <h6 class="fw-bold text-info-emphasis mb-2">Informasi Transfer</h6>
-                    <p class="small text-info-emphasis mb-1">Bank BCA: <strong>1234567890</strong> a.n Klinik Gigi Veraldo</p>
-                    <p class="small text-info-emphasis mb-0">Bank Mandiri: <strong>0987654321</strong> a.n Klinik Gigi Veraldo</p>
+                    <p class="small text-info-emphasis mb-1">Bank BCA: <strong>1234567890</strong> a.n DentalCare</p>
+                    <p class="small text-info-emphasis mb-0">Bank Mandiri: <strong>0987654321</strong> a.n DentalCare</p>
                 </div>
 
                 <form action="{{ route('pasien.pembayaran.store', $reservasi->id) }}" method="POST" enctype="multipart/form-data">
