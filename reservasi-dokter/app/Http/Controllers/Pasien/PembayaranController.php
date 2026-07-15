@@ -30,9 +30,13 @@ class PembayaranController extends Controller
         $reservasi = Reservasi::where('user_id', Auth::id())->findOrFail($reservasi_id);
 
         $request->validate([
+            'no_hp' => 'required|string|max:20',
             'nominal' => 'required|numeric|min:1',
             'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
+
+        $user = Auth::user();
+        $user->update(['no_hp' => $request->no_hp]);
 
         $path = $request->file('bukti_bayar')->store('pembayarans', 'public');
 

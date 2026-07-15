@@ -52,7 +52,7 @@
                             <form id="form-verify-{{ $reservasi->id }}" action="{{ route('admin.reservasi.verify', $reservasi->id) }}" method="POST" class="d-inline-flex align-items-center">
                                 @csrf
                                 <button type="submit" name="status" value="approved" class="btn btn-sm btn-success me-1">Setujui</button>
-                                <button type="submit" name="status" value="rejected" class="btn btn-sm btn-danger" onclick="return confirm('Tolak reservasi ini?')">Tolak</button>
+                                <button type="submit" name="status" value="rejected" class="btn btn-sm btn-danger">Tolak</button>
                             </form>
                             @else
                             <span class="text-muted fst-italic small">Selesai</span>

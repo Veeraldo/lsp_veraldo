@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DentalCare Pro</title>
+    <title>DentalCare</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -213,16 +213,7 @@
                 <ul class="list-unstyled mb-5 space-y-3">
                     <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle me-3 fs-5"></i> Direct booking with specialists</li>
                     <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle me-3 fs-5"></i> Secure access to 3D scans</li>
-                    <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle me-3 fs-5"></i> Appointment reminders via SMS</li>
                 </ul>
-
-                <div class="mt-auto bg-white bg-opacity-10 p-4 rounded-4" style="border: 1px solid rgba(255,255,255,0.1);">
-                    <p class="small fst-italic mb-3">"The digital onboarding was seamless. I booked my crown replacement in under 2 minutes."</p>
-                    <div class="d-flex align-items-center">
-                        <div class="bg-white rounded-circle me-2" style="width: 24px; height: 24px;"></div>
-                        <span class="small fw-semibold">— Sarah J., Patient</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -232,7 +223,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 class="fw-bold mb-3" style="color: var(--primary-teal);">DentalCare Pro</h5>
+                    <h5 class="fw-bold mb-3" style="color: var(--primary-teal);">DentalCare</h5>
                     <p class="text-muted small w-75 mb-4">Setting the standard in high-end medical dental services with a commitment to clinical perfection and patient well-being.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="text-dark"><i class="bi bi-globe"></i></a>
@@ -258,7 +249,7 @@
             <hr class="my-4 border-secondary opacity-25">
             
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted small">
-                <p class="mb-2 mb-md-0">&copy; 2026 DentalCare Pro Professional Clinic Systems.</p>
+                <p class="mb-2 mb-md-0">&copy; 2026 DentalCare.</p>
                 <div class="d-flex gap-2">
                     <span class="bg-white px-2 py-1 rounded border shadow-sm" style="font-size: 10px;">VISA</span>
                     <span class="bg-white px-2 py-1 rounded border shadow-sm" style="font-size: 10px;">MC</span>

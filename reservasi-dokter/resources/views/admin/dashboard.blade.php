@@ -50,14 +50,13 @@
     </div>
 </div>
 
-<div class="card bg-teal text-white overflow-hidden position-relative">
-    <i class="bi bi-stars position-absolute" style="font-size: 150px; right: -20px; top: -30px; opacity: 0.1;"></i>
+<div class="card bg-teal text-black overflow-hidden position-relative">
     <div class="card-body p-5">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <span class="badge bg-white bg-opacity-25 text-white mb-3 tracking-wider text-uppercase" style="letter-spacing: 1px;">Klinik Veraldo Admin</span>
+                <span class="badge bg-white bg-opacity-25 text-black mb-3 tracking-wider text-uppercase" style="letter-spacing: 1px;">Admin DentalCare</span>
                 <h3 class="fw-bold mb-3 display-6">Selamat Datang, {{ explode(' ', auth()->user()->name)[0] }}!</h3>
-                <p class="text-white-50 fs-5 mb-0 w-75">Pantau kinerja klinik Anda hari ini. Segera tindak lanjuti pasien baru, konfirmasi jadwal reservasi, dan pastikan seluruh pembayaran diverifikasi.</p>
+                <p class="text-black-50 fs-5 mb-0 w-75">Pantau kinerja klinik Anda hari ini. Segera tindak lanjuti pasien baru, konfirmasi jadwal reservasi, dan pastikan seluruh pembayaran diverifikasi.</p>
             </div>
         </div>
     </div>

@@ -62,6 +62,9 @@ Route::middleware(['auth', 'pasien'])->prefix('pasien')->name('pasien.')->group(
     Route::get('/reservasi', [PasienReservasi::class, 'index'])->name('reservasi.index');
     Route::get('/reservasi/create', [PasienReservasi::class, 'create'])->name('reservasi.create');
     Route::post('/reservasi', [PasienReservasi::class, 'store'])->name('reservasi.store');
+    Route::get('/reservasi/{id}/edit', [PasienReservasi::class, 'edit'])->name('reservasi.edit');
+    Route::put('/reservasi/{id}', [PasienReservasi::class, 'update'])->name('reservasi.update');
+    Route::delete('/reservasi/{id}', [PasienReservasi::class, 'destroy'])->name('reservasi.destroy');
     
     // Pembayaran
     Route::get('/pembayaran/{reservasi}/create', [PasienPembayaran::class, 'create'])->name('pembayaran.create');

@@ -44,7 +44,10 @@
 
                 <form action="{{ route('pasien.pembayaran.store', $reservasi->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    
+                    <div class="mb-4">
+                        <label for="no_hp" class="form-label fw-bold text-dark mb-2">Nomor HP</label>
+                        <input type="number" id="no_hp" name="no_hp" class="form-control form-control-lg border-secondary rounded-3" value="{{ old('no_hp', auth()->user()->no_hp) }}" inputmode="numeric" required>
+                    </div>
                     <div class="mb-4">
                         <label for="nominal" class="form-label fw-bold text-dark mb-2">Total Tagihan (Rp)</label>
                         <div class="input-group input-group-lg mb-2">
