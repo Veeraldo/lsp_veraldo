@@ -24,9 +24,9 @@
             <!-- Welcome Card -->
             <div class="card border-0 rounded-4 shadow-sm mb-4 overflow-hidden" style="background-color: #fff;">
                 <div class="card-body p-5 position-relative">
-                    <h1 class="display-6 fw-bold text-dark mb-3">Selamat Datang, {{ explode(' ', auth()->user()->name)[0] }}
+                    <h1 class="display-6 fw-bold text-dark mb-3">Welcome, {{ explode(' ', auth()->user()->name)[0] }}
                     </h1>
-                    <p class="text-muted fs-6 w-75 mb-0">Periksa Kesehatan, Lihat Reservasi, dan update Pemberitahuan Klinik</p>
+                    <p class="text-muted fs-6 w-75 mb-0">Check Health Status, View Reservations, and Update Clinic Notifications</p>
                     <i class="bi bi-tooth position-absolute text-light"
                         style="font-size: 150px; right: -20px; bottom: -40px; opacity: 0.5;"></i>
                 </div>
@@ -81,7 +81,7 @@
 
                 <!-- Upcoming Appointments -->
                 <div class="col-12 mt-5">
-                    <h5 class="fw-bold mb-3">Reservasi mendatang</h5>
+                    <h5 class="fw-bold mb-3">Upcoming reservations</h5>
                     <div class="card border-0 shadow-sm rounded-4">
                         <div class="card-body p-4">
                             @forelse($upcomingReservasis as $reservasi)
@@ -114,7 +114,7 @@
                             @empty
                                 <div class="text-center py-4">
                                     <i class="bi bi-calendar-x fs-1 text-muted opacity-50 mb-3 d-block"></i>
-                                    <p class="text-muted fw-semibold mb-0">Tidak ada jadwal reservasi mendatang.</p>
+                                    <p class="text-muted fw-semibold mb-0">There are no upcoming reservation schedules.</p>
                                 </div>
                             @endforelse
 

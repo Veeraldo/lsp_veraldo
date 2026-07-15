@@ -45,10 +45,10 @@
                         <a class="nav-link {{ request()->routeIs('pasien.dashboard') ? 'active' : '' }}" href="{{ route('pasien.dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('pasien.reservasi.create') ? 'active' : '' }}" href="{{ route('pasien.reservasi.create') }}">Reservasi</a>
+                        <a class="nav-link {{ request()->routeIs('pasien.reservasi.create') ? 'active' : '' }}" href="{{ route('pasien.reservasi.create') }}">Reservation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('pasien.reservasi.index') || request()->routeIs('pasien.pembayaran.*') ? 'active' : '' }}" href="{{ route('pasien.reservasi.index') }}">Pembayaran</a>
+                        <a class="nav-link {{ request()->routeIs('pasien.reservasi.index') || request()->routeIs('pasien.pembayaran.*') ? 'active' : '' }}" href="{{ route('pasien.reservasi.index') }}">Payments</a>
                     </li>
                 </ul>
             </div>
@@ -102,7 +102,7 @@
                 <a href="#" class="text-muted text-decoration-none">Help Center</a>
                 <a href="#" class="text-muted text-decoration-none">Contact Support</a>
             </div>
-            &copy; {{ date('Y') }} DentalCare Pro Professional Clinic Systems.
+            &copy; {{ date('Y') }} DentalCare.
         </div>
     </footer>
     
