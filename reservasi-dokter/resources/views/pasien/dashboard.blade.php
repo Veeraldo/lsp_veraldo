@@ -24,8 +24,16 @@
             <!-- Welcome Card -->
             <div class="card border-0 rounded-4 shadow-sm mb-4 overflow-hidden" style="background-color: #fff;">
                 <div class="card-body p-5 position-relative">
-                    <h1 class="display-6 fw-bold text-dark mb-3">Welcome, {{ explode(' ', auth()->user()->name)[0] }}
-                    </h1>
+                    <div class="d-flex align-items-center mb-3 flex-wrap gap-2">
+                        <h1 class="display-6 fw-bold text-dark mb-0">Welcome, {{ explode(' ', auth()->user()->name)[0] }}</h1>
+                        @if(auth()->user()->status_akun == 'approved')
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success rounded-pill px-3 py-2 ms-md-2"><i class="bi bi-check-circle-fill me-1"></i> Terverifikasi</span>
+                        @elseif(auth()->user()->status_akun == 'rejected')
+                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger rounded-pill px-3 py-2 ms-md-2"><i class="bi bi-x-circle-fill me-1"></i> Ditolak</span>
+                        @else
+                            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning rounded-pill px-3 py-2 ms-md-2"><i class="bi bi-hourglass-split me-1"></i> Menunggu Verifikasi</span>
+                        @endif
+                    </div>
                     <p class="text-muted fs-6 w-75 mb-0">Check Health Status, View Reservations, and Update Clinic Notifications</p>
                     <i class="bi bi-tooth position-absolute text-light"
                         style="font-size: 150px; right: -20px; bottom: -40px; opacity: 0.5;"></i>

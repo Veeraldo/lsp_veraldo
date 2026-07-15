@@ -1,58 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 DentalCare - Sistem Reservasi Klinik Gigi
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi berbasis web modern untuk manajemen klinik gigi, mulai dari verifikasi akun pasien, manajemen jadwal dokter, hingga pelacakan status pembayaran reservasi. 
 
-## About Laravel
+Aplikasi ini dirancang dengan antarmuka pengguna yang bersih, responsif, dan premium menggunakan **Laravel 11** dan **Bootstrap 5**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Spesifikasi & Teknologi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi ini dibangun di atas tumpukan teknologi modern standar industri:
+- **Framework:** Laravel 11.x
+- **Bahasa Pemrograman:** PHP 8.2+
+- **Database:** MySQL
+- **Frontend / UI:** 
+  - Bootstrap 5.3 (via CDN)
+  - CSS Kustom (Desain identitas *Teal*)
+  - Blade Templating Engine
+  - Google Fonts (Inter) & Bootstrap Icons
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Fitur Utama
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Sistem ini memiliki dua peran utama: **Admin** dan **Pasien**, masing-masing dengan alur kerja yang terpisah dan aman.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+**👨‍💻 Panel Admin:**
+- **Verifikasi Pasien:** Memverifikasi akun pasien baru sebelum mereka bisa melakukan reservasi.
+- **Manajemen Dokter:** *Create, Read, Update, Delete* (CRUD) profil dokter dan foto.
+- **Manajemen Jadwal:** Mengatur tanggal, waktu mulai, dan ketersediaan dokter.
+- **Manajemen Reservasi:** Memverifikasi pengajuan jadwal pasien dan menetapkan harga (tagihan) reservasi.
+- **Verifikasi Pembayaran:** Memverifikasi bukti transfer pasien.
 
-## Agentic Development
+**🧑‍🦱 Panel Pasien:**
+- **Sistem Pendaftaran Aman:** Pasien tidak dapat memesan sebelum diverifikasi(Approved) oleh Admin.
+- **Reservasi Dinamis:** Memilih spesialisasi, dokter, dan jadwal ketersediaan.
+- **Pembayaran Terintegrasi:** Mengunggah bukti transfer (dengan format rupiah otomatis) untuk jadwal yang telah disetujui admin.
+- **Manajemen Aktivitas:** Mengubah (*Reschedule*) atau membatalkan (*Cancel*) jadwal sebelum disetujui.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
+
+## 🚀 Panduan Instalasi (Development)
+
+Ikuti langkah-langkah di bawah ini untuk menjalankan proyek ini secara lokal di komputer Anda:
+
+### 1. Kebutuhan Sistem (*Prerequisites*)
+Pastikan Anda sudah menginstal:
+- [PHP](https://www.php.net/downloads) (Versi 8.2 atau lebih baru)
+- [Composer](https://getcomposer.org/)
+- [XAMPP / MySQL](https://www.apachefriends.org/index.html)
+- Web Browser Modern (Chrome / Edge / Firefox)
+
+### 2. Langkah Instalasi
 
 ```bash
-composer require laravel/boost --dev
+# 1. Kloning Repositori (Jika menggunakan Git)
+git clone <url-repo-anda>
+cd reservasi-dokter
 
-php artisan boost:install
+# 2. Instalasi Dependensi PHP
+composer install
+
+# 3. Konfigurasi File Lingkungan
+copy .env.example .env
+
+# 4. Buat Application Key
+php artisan key:generate
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 3. Konfigurasi Database
+Buka file `.env` yang baru saja dibuat, lalu sesuaikan konfigurasi koneksi *database*-nya. (Pastikan Anda sudah membuat *database* kosong di MySQL/phpMyAdmin, misalnya bernama `reservasi_dokter`):
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=reservasi_dokter
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Contributing
+### 4. Migrasi & Data Awal (Penting!)
+Jalankan perintah ini untuk membangun struktur tabel *database* dan menyuntikkan akun admin *default*:
+```bash
+php artisan migrate:fresh --seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 5. Hubungkan Folder Penyimpanan Gambar
+Agar foto dokter dan bukti pembayaran bisa ditampilkan di *website*, jalankan perintah ini (hanya perlu sekali):
+```bash
+php artisan storage:link
+```
 
-## Code of Conduct
+### 6. Jalankan Server
+```bash
+php artisan serve
+```
+Aplikasi kini dapat diakses melalui browser di alamat: **`http://localhost:8000`**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🔐 Kredensial Akses Default
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Setelah menjalankan *seeder* (`migrate:fresh --seed`), Anda bisa langsung masuk sebagai Admin menggunakan akun berikut:
+- **Email:** `admin@gmail.com`
+- **Password:** `admin123`
 
-## License
+Untuk masuk sebagai Pasien, silakan daftar (*Register*) melalui halaman web, lalu jangan lupa **sahkan (approve) akun pasien tersebut menggunakan panel Admin** agar bisa mencoba fitur reservasi.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+*Dikembangkan secara khusus untuk LSP Veraldo.*

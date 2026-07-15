@@ -91,7 +91,7 @@
                                 <label for="email" class="form-label text-muted fw-semibold small mb-1">Email Address</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
-                                    <input type="email" class="form-control bg-light border-start-0 py-2 ps-0" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="john@example.com">
+                                    <input type="email" class="form-control bg-light border-start-0 py-2 ps-0" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="Vee@example.com">
                                 </div>
                             </div>
                             
