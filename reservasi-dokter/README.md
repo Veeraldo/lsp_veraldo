@@ -1,15 +1,15 @@
-# 🏥 DentalCare - Sistem Reservasi Klinik Gigi
+# DentalCare - Sistem Reservasi Klinik Gigi
 
 Aplikasi berbasis web modern untuk manajemen klinik gigi, mulai dari verifikasi akun pasien, manajemen jadwal dokter, hingga pelacakan status pembayaran reservasi. 
 
-Aplikasi ini dirancang dengan antarmuka pengguna yang bersih, responsif, dan premium menggunakan **Laravel 11** dan **Bootstrap 5**.
+Aplikasi ini dirancang dengan antarmuka pengguna yang bersih, responsif, dan premium menggunakan **Laravel 13** dan **Bootstrap 5**.
 
 ---
 
-## 📋 Spesifikasi & Teknologi
+## Spesifikasi & Teknologi
 
 Aplikasi ini dibangun di atas tumpukan teknologi modern standar industri:
-- **Framework:** Laravel 11.x
+- **Framework:** Laravel 13.x
 - **Bahasa Pemrograman:** PHP 8.2+
 - **Database:** MySQL
 - **Frontend / UI:** 
@@ -20,18 +20,18 @@ Aplikasi ini dibangun di atas tumpukan teknologi modern standar industri:
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 Sistem ini memiliki dua peran utama: **Admin** dan **Pasien**, masing-masing dengan alur kerja yang terpisah dan aman.
 
-**👨‍💻 Panel Admin:**
+**Panel Admin:**
 - **Verifikasi Pasien:** Memverifikasi akun pasien baru sebelum mereka bisa melakukan reservasi.
 - **Manajemen Dokter:** *Create, Read, Update, Delete* (CRUD) profil dokter dan foto.
 - **Manajemen Jadwal:** Mengatur tanggal, waktu mulai, dan ketersediaan dokter.
 - **Manajemen Reservasi:** Memverifikasi pengajuan jadwal pasien dan menetapkan harga (tagihan) reservasi.
 - **Verifikasi Pembayaran:** Memverifikasi bukti transfer pasien.
 
-**🧑‍🦱 Panel Pasien:**
+**Panel Pasien:**
 - **Sistem Pendaftaran Aman:** Pasien tidak dapat memesan sebelum diverifikasi(Approved) oleh Admin.
 - **Reservasi Dinamis:** Memilih spesialisasi, dokter, dan jadwal ketersediaan.
 - **Pembayaran Terintegrasi:** Mengunggah bukti transfer (dengan format rupiah otomatis) untuk jadwal yang telah disetujui admin.
@@ -39,7 +39,7 @@ Sistem ini memiliki dua peran utama: **Admin** dan **Pasien**, masing-masing den
 
 ---
 
-## 🚀 Panduan Instalasi (Development)
+## Panduan Instalasi (Development)
 
 Ikuti langkah-langkah di bawah ini untuk menjalankan proyek ini secara lokal di komputer Anda:
 
@@ -98,13 +98,10 @@ Aplikasi kini dapat diakses melalui browser di alamat: **`http://localhost:8000`
 
 ---
 
-## 🔐 Kredensial Akses Default
+## Kredensial Akses Default
 
 Setelah menjalankan *seeder* (`migrate:fresh --seed`), Anda bisa langsung masuk sebagai Admin menggunakan akun berikut:
 - **Email:** `admin@gmail.com`
 - **Password:** `admin123`
 
 Untuk masuk sebagai Pasien, silakan daftar (*Register*) melalui halaman web, lalu jangan lupa **sahkan (approve) akun pasien tersebut menggunakan panel Admin** agar bisa mencoba fitur reservasi.
-
----
-*Dikembangkan secara khusus untuk LSP Veraldo.*
